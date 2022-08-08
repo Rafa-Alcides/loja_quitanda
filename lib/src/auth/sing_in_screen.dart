@@ -13,10 +13,7 @@ class SingInScreen extends StatelessWidget {
           Expanded(child: Container(color: Colors.blue,),),
           Expanded(
             child: Container(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 32,
-                vertical: 40,
-              ),
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.vertical(
@@ -25,16 +22,64 @@ class SingInScreen extends StatelessWidget {
               ),
               child: SingleChildScrollView(
                 child: Column(
-                  children:  const [
-                    CustomTextFild(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    const CustomTextFild(
                       icon: Icons.email,
                       label: "E-mail",
                     ),
-                    CustomTextFild(
+                    const CustomTextFild(
                       icon: Icons.lock,
                       label: "Senha",
                       isSecret: true,
                     ),
+                    SizedBox(
+                      height: 50,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(45)
+                          )
+                        ),
+                        onPressed: () {}, 
+                        child: const Text("Entrar")
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: TextButton(
+                        onPressed: () {}, 
+                        child: const Text("Esqueceu a senha",
+                        style: TextStyle(
+                          color: Colors.red
+                        ),
+                        )
+                      ),
+                    ),
+                    Row(
+                      children: const [
+                        Expanded(
+                          child: Divider(
+                            color: Colors.grey,
+                            thickness: 2,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          child: Text("Ou"),
+                        ),
+                        Expanded(
+                          child: Divider(
+                            color: Colors.grey,
+                            thickness: 2,
+                          ),
+                        ),
+                      ],
+                    ),
+                    TextButton(
+                      onPressed: () {}, 
+                      child: const Text("Criar conta Agora")
+                    )
                   ],
                 ),
               ),
