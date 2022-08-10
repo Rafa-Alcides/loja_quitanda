@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:loja_quitanda/src/auth/components/custom_eleveted_buttom.dart';
 import 'package:loja_quitanda/src/auth/components/custom_text_fild.dart';
 import 'package:loja_quitanda/src/auth/sign_up_screen.dart';
+import 'package:loja_quitanda/src/base/base_screen.dart';
 import 'package:loja_quitanda/src/config/custom_colors.dart';
 
 class SingInScreen extends StatelessWidget {
@@ -91,7 +92,15 @@ class SingInScreen extends StatelessWidget {
                       label: "Senha",
                       isSecret: true,
                     ),
-                    CustomElevetedButton(label: "Entrar", onPressed: () {}),
+                    CustomElevetedButton(label: "Entrar", onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (c) {
+                            return const BaseScreen();
+                          }
+                        )
+                      );
+                    }),
                     Align(
                       alignment: Alignment.centerRight,
                       child: TextButton(
