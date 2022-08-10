@@ -1,7 +1,9 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:loja_quitanda/src/auth/components/custom_eleveted_buttom.dart';
 import 'package:loja_quitanda/src/auth/components/custom_text_fild.dart';
-import 'package:loja_quitanda/src/config/custom_colora.dart';
+import 'package:loja_quitanda/src/auth/sign_up_screen.dart';
+import 'package:loja_quitanda/src/config/custom_colors.dart';
 
 class SingInScreen extends StatelessWidget {
   const SingInScreen({super.key});
@@ -89,18 +91,7 @@ class SingInScreen extends StatelessWidget {
                       label: "Senha",
                       isSecret: true,
                     ),
-                    SizedBox(
-                      height: 50,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(45)
-                          )
-                        ),
-                        onPressed: () {}, 
-                        child: const Text("Entrar")
-                      ),
-                    ),
+                    CustomElevetedButton(label: "Entrar", onPressed: () {}),
                     Align(
                       alignment: Alignment.centerRight,
                       child: TextButton(
@@ -133,7 +124,13 @@ class SingInScreen extends StatelessWidget {
                       ],
                     ),
                     TextButton(
-                      onPressed: () {}, 
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(builder: (c) {
+                            return SignUpScreen();
+                          })
+                        );
+                      }, 
                       child: const Text("Criar conta Agora")
                     )
                   ],
