@@ -14,10 +14,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.green,
-        scaffoldBackgroundColor: Colors.white.withAlpha(190)
+        scaffoldBackgroundColor: Colors.white.withAlpha(190),
       ),
       home: const SingInScreen(),
     );
   }
 }
-
